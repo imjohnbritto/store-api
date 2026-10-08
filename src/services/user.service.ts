@@ -16,7 +16,7 @@ export const getUser = async (id: string) => {
 
 export const createUser = async (data: any) => {
   try {
-    return userRepo.create(data);
+    return await userRepo.create(data);
   } catch (err: any) {
     throw new ApiError(500, "Failed to create user!", err);
   }
